@@ -33,7 +33,7 @@ class Utilities(commands.Cog):
             await member.add_roles(role)
         
         
-        embed=Embed(title="Timeout finished.", color=Color(value=0x37b83b), description='Removed your timeout role. Please behave, or we will have to take further action.').set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}', icon_url=ctx.author.avatar_url)
+        embed=Embed(title="Done!", color=Color(value=0x37b83b), description=f'Removed the Nickname Restriction role from <@{member.id}>.They can now change their own nickname. To reassign this role, use $lock-nickname').set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}', icon_url=ctx.author.avatar_url)
         try:
             await member.send(embed=embed)
             await member.remove_roles(role)
@@ -42,7 +42,7 @@ class Utilities(commands.Cog):
             await channel.send(f'<@{member.id}> I tried to DM this to you, but your DMs are closed!', embed=embed)
             await member.remove_roles(role)
     
-        await ctx.author.send(embed=Embed(title="Done!", color=Color(value=0x37b83b), description=f'Removed {member.name}\'s timeout role.').set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}', icon_url=ctx.author.avatar_url))
+        await ctx.author.send(embed=Embed(title="Done!", color=Color(value=0x37b83b), description=f'Removed {member.name}\'s Nickname Restriction role.').set_footer(text=f'Requested by {ctx.author.name}#{ctx.author.discriminator}', icon_url=ctx.author.avatar_url))
 
     
     @rules.error
